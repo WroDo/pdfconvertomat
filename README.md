@@ -6,6 +6,7 @@ This simple webpage can be used in your intranet for converting PDF files withou
 
 # Installing
 Use a LAMP with Poppler-Tools.
+Create log and uploads folders, make themn writable for your webserver.
 
 # Usage
 TBD TBD

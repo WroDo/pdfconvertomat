@@ -1,8 +1,8 @@
 <?php 
 
 /* Globals */
-$gRootPath          =   "/srv/www/htdocs/webpdf"; /* The root of all evil :) */
-$gFileLog           =   "$gRootPath/log/#webpdf.log"; /* # Makes CVS ignore the file */
+$gRootPath          =   "/srv/www/htdocs/pdfconvertomat"; /* The root of all evil :) */
+$gFileLog           =   "$gRootPath/log/#log.log"; /* # Makes CVS ignore the file */
 $gFilesPath         =   "$gRootPath/files"; /* In diesem Ordner landen alle Uploads und Mail-Attachments */
 $gLogLevel          =   2;              /* As usual: 0 = only errors, 1 = warnings, 2 = everything, 3 = even more (floods the log :) ) */
 $gLocaleWeb         =   "en_US.utf8";   /* See your LAMP's locale -a */
