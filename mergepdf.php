@@ -6,6 +6,7 @@ require_once('etc/globals.php');
 require_once('include/commonFunctions.php');
 require_once('include/commonLogging.php');
 require_once('include/commonFiles.php');
+require_once('include/internationalization.php');
 
 /* Init */
 session_start(); /* https://www.php.net/manual/en/function.session-start.php */
@@ -47,7 +48,7 @@ if (file_exists($gUploadFolder))
 	/* Checke mal, obs überhaupt zwei oder mehr sind… */
 	if ($gFilesInArrayCount<2)
 	{
-		echo("<font color=\"red\">You selected less that two files. Try again. (Error -5)</font><br/>");
+		echo("<font color=\"red\">$gMergeNotEnoughFules</font><br/>");
 		$gFailed=true;
 	}
 
@@ -65,7 +66,7 @@ if (file_exists($gUploadFolder))
 			echo("$lFileNameSuffix");
 			if (strtoupper($lFileNameSuffix)!="PDF")
 			{
-				echo("<font color=\"red\">&rarr; This file is no PDF and can not be processed. (Error -42)</font>");
+				echo("<font color=\"red\">&rarr; $gMergeNoPDF</font>");
 				$gFailed=true;
 			}
 			else
