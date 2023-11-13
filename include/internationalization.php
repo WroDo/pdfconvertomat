@@ -16,6 +16,7 @@ if ($gSiteLanguage=="de")
 	$gConvertMore			=	"<br/>Wenn Du noch mehr Dateien konvertieren möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
 	$gMergeNotEnoughFules	=	"Du hast weniger als zwei Dateien ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
 	$gMergeNoPDF			=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
+	$gIntMergeNoFiles		=	"Es wurden keine Dateien hochgeladen. Nichtmal der session-upload-Ordner existiert. (Error -23)";
 }
 elseif ($gSiteLanguage=="en")
 { 
@@ -34,6 +35,7 @@ elseif ($gSiteLanguage=="en")
 	$gConvertMore			=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>)";
 	$gMergeNotEnoughFules	=	"You selected less that two files. Try again. (Error -5)";
 	$gMergeNoPDF			=	"This file is no PDF and can not be processed. (Error -42)";
+	$gIntMergeNoFiles		=	"No files have been uploaded. Actually, not even the session-upload-folder exists. (Error -23)";
 }
 // add other languages here
 

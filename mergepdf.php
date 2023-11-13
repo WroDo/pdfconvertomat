@@ -112,7 +112,7 @@ if (file_exists($gUploadFolder))
 } // if upload-session-folder-exists
 else
 {
-	echo("<font color=\"red\">No files have been uploaded. Actually, not even the session-upload-folder exists. (Error -23)</font><br/>");
+	echo("<font color=\"red\">$gIntMergeNoFiles</font><br/>");
 }
 
 echo($gConvertMore);
