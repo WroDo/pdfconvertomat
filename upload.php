@@ -13,7 +13,7 @@ session_start(); /* https://www.php.net/manual/en/function.session-start.php */
 
 /* Defaults */
 $errArray           =   array();
-$gSessionID                     =       session_id();
+$gSessionID         =       session_id();
 
 /* Some Debugging */
 say("gSessionID: $gSessionID", __FILE__, __FUNCTION__, __LINE__, 2);
@@ -33,12 +33,17 @@ if (file_exists($storeFolder)===false) { mkdir($storeFolder); }
  
 if (!empty($_FILES))
 {
-     
+    $status=$_FILES['file']['error'];
     $tempFile = $_FILES['file']['tmp_name'];          //3             
       
     $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;  //4
      
     $targetFile =  $targetPath. $_FILES['file']['name'];  //5
+
+    if ($status!=0)
+    {
+		say("File \"$tempFile\" reported an error ($status).", __FILE__, __FUNCTION__, __LINE__, 2);
+	}
  
     move_uploaded_file($tempFile,$targetFile); //6
 }

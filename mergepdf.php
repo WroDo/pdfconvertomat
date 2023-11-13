@@ -52,28 +52,30 @@ if (file_exists($gUploadFolder))
 	}
 
 	/* Checke mal, ob das alles PDFs sind! */
+	echo("<font size=\"1\">");
+	echo("&Uuml;berpr&uuml;fe " . count($gFilesInArray) . " files…<br/>");
 	if (!$gFailed)
 	foreach ($gFilesInArray as $lFileNum => $lFileName)
 	{
 		if ($lFileName!="." && $lFileName!="..")
 		{
-//			echo("<font size=\"1\">");
-//			echo("&Uuml;berpr&uuml;fe \"$lFileName\"…");
+			echo("&Uuml;berpr&uuml;fe \"$lFileName\"…");
 			$lFileNameParts = explode('.', $lFileName);
 			$lFileNameSuffix = end($lFileNameParts);
-//			echo("$lFileNameSuffix");
+			echo("$lFileNameSuffix");
 			if (strtoupper($lFileNameSuffix)!="PDF")
 			{
-//				echo("<font color=\"red\">&rarr; This file is no PDF and can not be processed. (Error -42)</font>");
+				echo("<font color=\"red\">&rarr; This file is no PDF and can not be processed. (Error -42)</font>");
 				$gFailed=true;
 			}
 			else
 			{
-//				echo("<font color=\"green\">&rarr; Okidoki</font>");
+				echo("<font color=\"green\">&rarr; Okidoki</font>");
 			}
-//			echo("</font><br/><br/>");
+			echo("<br/>");
 		}
 	}
+	echo("</font><br/><br/>");
 
 	/* Merge die PDFs */
 	if (!$gFailed)
