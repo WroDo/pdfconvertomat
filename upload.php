@@ -13,7 +13,7 @@ session_start(); /* https://www.php.net/manual/en/function.session-start.php */
 
 /* Defaults */
 $errArray           =   array();
-$gSessionID			=	session_id();
+$gSessionID                     =       session_id();
 
 /* Some Debugging */
 say("gSessionID: $gSessionID", __FILE__, __FUNCTION__, __LINE__, 2);
@@ -28,6 +28,7 @@ sayArray($_FILES, __FILE__, __FUNCTION__, __LINE__, 2);
 $ds          = DIRECTORY_SEPARATOR;  //1
  
 $storeFolder = "$gFolderUploadName/$gSessionID";   //2
+say("storeFolder: $storeFolder", __FILE__, __FUNCTION__, __LINE__, 2);
 if (file_exists($storeFolder)===false) { mkdir($storeFolder); }
  
 if (!empty($_FILES))
@@ -41,7 +42,10 @@ if (!empty($_FILES))
  
     move_uploaded_file($tempFile,$targetFile); //6
 }
-
+else
+{
+        say("Empty _FILES.", __FILE__, __FUNCTION__, __LINE__, 0);
+}
 
 
 ?>

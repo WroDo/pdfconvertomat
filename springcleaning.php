@@ -36,7 +36,7 @@ if($dir)
     foreach ($dir as $file)
     {
        /* Comparing the current time with the time when file was created */
-        if ($file && $now - filemtime($file) >= 60 * 60 * 24 * 1 && strpos($file, "README")!==false )
+        if ($file && $now - filemtime($file) >= 60 * 60 * 24 * 1 && strpos($file, "README")===false )
         { // 1 days
             array_push($deleteFiles, $file);
             $file->isDir() ? rmdir($file) : unlink($file);
