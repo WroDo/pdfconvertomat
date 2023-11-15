@@ -24,8 +24,8 @@ echo("$gShortIntro
 		<form action=\"upload.php\" class=\"dropzone\"></form>
 	<br/>
 	<div style=\"text-align:center\">
-		<a href=\"mergepdf.php\"><button style=\"background:green;color:white;\">$gButtonMergeLabel</button></a>&nbsp;&nbsp;&nbsp;
-		<a href=\"cleanup.php\"><button style=\"background:red;color:white;\">$gButtonCleanupLabel</button></a>
+		<a href=\"mergepdf.php\"><button style=\"background:green;color:white;\">$gIntButtonMergeLabel	</button></a>&nbsp;&nbsp;&nbsp;
+		<a href=\"cleanup.php\"><button style=\"background:red;color:white;\">$gIntButtonCleanupLabel</button></a>
 	</div>
 ");
 

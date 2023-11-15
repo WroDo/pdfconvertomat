@@ -40,38 +40,57 @@ if (file_exists($gUploadFolder))
 {
 	$gFilesInArray=scandir($gUploadFolder);
 
-	/* Die ersten zwei Einträge sind "." und ".." */
+	/* Die ersten zwei Einträge sind "." und ".." 
 	array_shift($gFilesInArray);
 	array_shift($gFilesInArray);
-	$gFilesInArrayCount=count($gFilesInArray);
+	$gFilesInArrayCount=count($gFilesInArray);*/
+	
+	/* Ignore all .dot-files */
+	$gFilesInArrayTmp=array();
+	foreach($gFilesInArray as $lFilesInArrayKey => $lFilesInArrayValue)
+	{
+		if ($lFilesInArrayValue[0]!='.') // only if not hidden file (or directory)
+		{
+			array_push($gFilesInArrayTmp, $lFilesInArrayValue);
+		}
+	}
+	$gFilesInArray=$gFilesInArrayTmp;
+	
+	/* Sort'em - https://www.php.net/manual/en/function.sort.php */
+	say("gFilesInArray (unsorted):", __FILE__, __FUNCTION__, __LINE__, 2);
+	sayArray($gFilesInArray, __FILE__, __FUNCTION__, __LINE__, 2);
+	sort($gFilesInArray, SORT_NATURAL | SORT_FLAG_CASE);
+	say("gFilesInArray (sorted):", __FILE__, __FUNCTION__, __LINE__, 2);
+	sayArray($gFilesInArray, __FILE__, __FUNCTION__, __LINE__, 2);
 
 	/* Checke mal, obs überhaupt zwei oder mehr sind… */
+	$gFilesInArrayCount=count($gFilesInArray);
 	if ($gFilesInArrayCount<2)
 	{
-		echo("<font color=\"red\">$gMergeNotEnoughFules</font><br/>");
+		echo("<font color=\"red\">$gIntMergeNotEnoughFiles</font><br/>");
 		$gFailed=true;
 	}
 
 	/* Checke mal, ob das alles PDFs sind! */
 	echo("<font size=\"1\">");
-	echo("&Uuml;berpr&uuml;fe " . count($gFilesInArray) . " files…<br/>");
+	printf($gIntMergeCheckingFiles, count($gFilesInArray));
 	if (!$gFailed)
 	foreach ($gFilesInArray as $lFileNum => $lFileName)
 	{
 		if ($lFileName!="." && $lFileName!="..")
 		{
-			echo("&Uuml;berpr&uuml;fe \"$lFileName\"…");
+			printf($gIntMergeCheckingFile, $lFileName);
 			$lFileNameParts = explode('.', $lFileName);
 			$lFileNameSuffix = end($lFileNameParts);
 			echo("$lFileNameSuffix");
 			if (strtoupper($lFileNameSuffix)!="PDF")
 			{
-				echo("<font color=\"red\">&rarr; $gMergeNoPDF</font>");
+				echo("<font color=\"red\">&rarr;$gIntMergeNoPDF</font>");
 				$gFailed=true;
 			}
 			else
 			{
-				echo("<font color=\"green\">&rarr; Okidoki</font>");
+				echo("<font color=\"green\">&rarr;$gIntMergeOK</font>");
 			}
 			echo("<br/>");
 		}
@@ -107,7 +126,7 @@ if (file_exists($gUploadFolder))
 
 	if (!$gFailed)
 	{
-		echo("Hier kannst Du das Ergebnis herunterladen: <a href=\"$gFileOutPath\">$gFileOutName</a><br/>");
+		printf($gIntMergeDownloadHere, $gFileOutPath, $gFileOutName);
 	}
 } // if upload-session-folder-exists
 else
@@ -115,7 +134,7 @@ else
 	echo("<font color=\"red\">$gIntMergeNoFiles</font><br/>");
 }
 
-echo($gConvertMore);
+echo($gIntConvertMore);
 
 include("footer.php");
 

@@ -11,12 +11,16 @@ if ($gSiteLanguage=="de")
 	<br/>
 	3. Lade das Ergebnis herunter</br>
 ";
-	$gButtonMergeLabel		=	"Klicke hier<br/>um die<br/>Dateien zusammenzuf&uuml;gen";
-	$gButtonCleanupLabel	=	"Klicke hier<br/>um<br/>den Vorgang abzubrechen";
-	$gConvertMore			=	"<br/>Wenn Du noch mehr Dateien konvertieren möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
-	$gMergeNotEnoughFules	=	"Du hast weniger als zwei Dateien ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
-	$gMergeNoPDF			=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
-	$gIntMergeNoFiles		=	"Es wurden keine Dateien hochgeladen. Nichtmal der session-upload-Ordner existiert. (Error -23)";
+	$gIntButtonMergeLabel		=	"Klicke hier<br/>um die<br/>Dateien zusammenzuf&uuml;gen";
+	$gIntButtonCleanupLabel		=	"Klicke hier<br/>um<br/>den Vorgang abzubrechen";
+	$gIntConvertMore			=	"<br/>Wenn Du noch mehr Dateien konvertieren möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
+	$gIntMergeNotEnoughFiles	=	"Du hast weniger als zwei Dateien ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
+	$gIntMergeNoPDF				=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
+	$gIntMergeOK				=	"Okidoki";
+	$gIntMergeNoFiles			=	"Es wurden keine Dateien hochgeladen. Nichtmal der session-upload-Ordner existiert. (Error -23)";
+	$gIntMergeCheckingFiles		=	"&Uuml;berpr&uuml;fe %d Dateien…<br/>";
+	$gIntMergeCheckingFile		=	"&Uuml;berpr&uuml;fe \"%s\"…";
+	$gIntMergeDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\">%s</a><br/>";
 }
 elseif ($gSiteLanguage=="en")
 { 
@@ -30,12 +34,16 @@ elseif ($gSiteLanguage=="en")
 	<br/>
 	3. Download the resulting file(s).</br>
 ";
-	$gButtonMergeLabel		=	"Click here<br/>to merge files";
-	$gButtonCleanupLabel	=	"Click here<br/>to cancel";
-	$gConvertMore			=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>)";
-	$gMergeNotEnoughFules	=	"You selected less that two files. Try again. (Error -5)";
-	$gMergeNoPDF			=	"This file is no PDF and can not be processed. (Error -42)";
-	$gIntMergeNoFiles		=	"No files have been uploaded. Actually, not even the session-upload-folder exists. (Error -23)";
+	$gIntButtonMergeLabel		=	"Click here<br/>to merge files";
+	$gIntButtonCleanupLabel		=	"Click here<br/>to cancel";
+	$gIntConvertMore			=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>";
+	$gIntMergeNotEnoughFiles	=	"You selected less that two files. Try again. (Error -5)";
+	$gIntMergeNoPDF				=	"This file is no PDF and can not be processed. (Error -42)";
+	$gIntMergeOK				=	"Okidoki";
+	$gIntMergeNoFiles			=	"No files have been uploaded. Actually, not even the session-upload-folder exists. (Error -23)";
+	$gIntMergeCheckingFiles		=	"Checking %d files…<br/>";
+	$gIntMergeCheckingFile		=	"Checking \"%s\"…";
+	$gIntMergeDownloadHere	 	=	"Download the merged file: <a href=\"%s\">%s</a><br/>";
 }
 // add other languages here
 
