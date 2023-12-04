@@ -320,13 +320,7 @@ function timeStampForFolder()
     return($timestamp);
 }
 
-# TimeStamp erzeugen
-function timeStampForLog()
-{
-    date_default_timezone_set('Europe/Berlin');
-    $timestamp = date('Y-m-d, H:i:s');
-    return($timestamp);
-}
+
 
 # TimeStamp erzeugen
 function timeStamp()

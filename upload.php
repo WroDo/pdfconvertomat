@@ -45,7 +45,7 @@ if (!empty($_FILES))
     {
 		say("File \"$tempFile\" reported an error ($status).", __FILE__, __FUNCTION__, __LINE__, 2);
 	}
- 
+	
     move_uploaded_file($tempFile,$targetFile); //6
 }
 else

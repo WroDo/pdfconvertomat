@@ -25,6 +25,7 @@ echo("$gShortIntro
 	<br/>
 	<div style=\"text-align:center\">
 		<a href=\"mergepdf.php\"><button style=\"background:green;color:white;\">$gIntButtonMergeLabel	</button></a>&nbsp;&nbsp;&nbsp;
+		<a href=\"pdf2csv.php\"><button style=\"background:orange;color:white;\">$gIntButtonCsvLabel	</button></a>&nbsp;&nbsp;&nbsp;
 		<a href=\"cleanup.php\"><button style=\"background:red;color:white;\">$gIntButtonCleanupLabel</button></a>
 	</div>
 ");

@@ -19,6 +19,37 @@ function sayAnalyzedString($inString, $file, $function, $line, $severity) /* Sho
     }
 }
 
+
+function severityString($aSeverityNumber)
+{
+	global $gSeverities; //	$gSeverities	    =	array('0'=>'Error', '1'=>'Warning', '2'=>'Info', '3'=>'Debug', '-1'=>'Unknown');
+
+	if (array_key_exists($aSeverityNumber, $gSeverities)===false)
+	{
+		$aSeverityNumber=-1;
+	}
+
+	return($gSeverities[$aSeverityNumber]);
+
+} /* severityString */
+
+/* https://stackoverflow.com/questions/139474/how-can-i-capture-the-result-of-var-dump-to-a-string */
+function sayVarExport($inVar, $file, $function, $line, $severity)
+{
+	$debug = var_export($inVar, true);
+	say($debug, $file, $function, $line, $severity);
+}
+
+function truncateLog()
+{
+   # Globale Variablen hier in der Funktion verfügbar machen
+    global $gFileLog, $gFileLogMaxSize; //, $gFolderLogs, $gBasename, $gJobID; #, $gDevDebugDingsFlag;
+
+   # Cleanup
+    touch($gFileLog); /* Make sure, it exists */
+	truncateFile($gFileLog);
+} // truncateLog
+
 /* Functions */
 # Schreibe ein Array/Hash ins Log-File
 function sayHash($array, $fileName, $functionName, $lineNumber, $severity)
@@ -76,6 +107,15 @@ function say($message, $fileName, $functionName, $lineNumber, $severity)
         }
     }
     
+}
+
+
+# TimeStamp erzeugen
+function timeStampForLog()
+{
+    date_default_timezone_set('Europe/Berlin');
+    $timestamp = date('Y-m-d, H:i:s');
+    return($timestamp);
 }
 
 

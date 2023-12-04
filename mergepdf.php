@@ -134,7 +134,7 @@ else
 	echo("<font color=\"red\">$gIntMergeNoFiles</font><br/>");
 }
 
-echo($gIntConvertMore);
+echo($gIntMergeConvertMore);
 
 include("footer.php");
 

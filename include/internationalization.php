@@ -11,9 +11,12 @@ if ($gSiteLanguage=="de")
 	<br/>
 	3. Lade das Ergebnis herunter</br>
 ";
+	/* index.php Buttons */
 	$gIntButtonMergeLabel		=	"Klicke hier<br/>um die<br/>Dateien zusammenzuf&uuml;gen";
+	$gIntButtonCsvLabel			=	"Klicke hier<br/>um in ein CSV zu wandeln<br/>(beta)";
 	$gIntButtonCleanupLabel		=	"Klicke hier<br/>um<br/>den Vorgang abzubrechen";
-	$gIntConvertMore			=	"<br/>Wenn Du noch mehr Dateien konvertieren möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
+	/* mergepdf Strings */
+	$gIntMergeConvertMore		=	"<br/>Wenn Du noch mehr Dateien konvertieren möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
 	$gIntMergeNotEnoughFiles	=	"Du hast weniger als zwei Dateien ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
 	$gIntMergeNoPDF				=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
 	$gIntMergeOK				=	"Okidoki";
@@ -21,6 +24,16 @@ if ($gSiteLanguage=="de")
 	$gIntMergeCheckingFiles		=	"&Uuml;berpr&uuml;fe %d Dateien…<br/>";
 	$gIntMergeCheckingFile		=	"&Uuml;berpr&uuml;fe \"%s\"…";
 	$gIntMergeDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\">%s</a><br/>";
+	/* pdf2csv Strings */
+	$gIntCsvNotEnoughFiles		=	"Keine Datei hochgeladen. Lade bitte genau ein PDF hoch! (Error -666)";
+	$gIntCsvTooManyFiles		=	"Bitte lade <b>nur eine Datei</b> hoch!";
+	$gIntCsvNoFiles				=	$gIntMergeNoFiles;
+	$gIntCsvCheckingFiles		=	$gIntMergeCheckingFiles;
+	$gIntCsvCheckingFile		=	$gIntMergeCheckingFile;
+	$gIntCsvNoPDF				=	$gIntMergeNoPDF;
+	$gIntCsvOK					=	$gIntMergeOK;
+	$gIntCsvDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\" download>%s</a><br/>";
+	$gIntCsvConvertMore			=	$gIntMergeConvertMore;
 }
 elseif ($gSiteLanguage=="en")
 { 
@@ -34,9 +47,12 @@ elseif ($gSiteLanguage=="en")
 	<br/>
 	3. Download the resulting file(s).</br>
 ";
+	/* index.php Buttons */
 	$gIntButtonMergeLabel		=	"Click here<br/>to merge files";
+	$gIntButtonCsvLabel			=	"Click here<br/>to convert to CSV<br/>(beta)";
 	$gIntButtonCleanupLabel		=	"Click here<br/>to cancel";
-	$gIntConvertMore			=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>";
+	/* mergepdf Strings */
+	$gIntMergeConvertMore		=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>";
 	$gIntMergeNotEnoughFiles	=	"You selected less that two files. Try again. (Error -5)";
 	$gIntMergeNoPDF				=	"This file is no PDF and can not be processed. (Error -42)";
 	$gIntMergeOK				=	"Okidoki";
@@ -44,6 +60,16 @@ elseif ($gSiteLanguage=="en")
 	$gIntMergeCheckingFiles		=	"Checking %d files…<br/>";
 	$gIntMergeCheckingFile		=	"Checking \"%s\"…";
 	$gIntMergeDownloadHere	 	=	"Download the merged file: <a href=\"%s\">%s</a><br/>";
+	/* pdf2csv Strings */
+	$gIntCsvNotEnoughFiles		=	"No files uploaded. Please upload exactly one PDF! (Error -666)";
+	$gIntCsvTooManyFiles		=	"Please upload <b>only one file</b>!";
+	$gIntCsvNoFiles				=	$gIntMergeNoFiles;
+	$gIntCsvCheckingFiles		=	$gIntMergeCheckingFiles;
+	$gIntCsvCheckingFile		=	$gIntMergeCheckingFile;
+	$gIntCsvNoPDF				=	$gIntMergeNoPDF;
+	$gIntCsvOK					=	$gIntMergeOK;
+	$gIntCsvDownloadHere		=	"Download the CSV-file: <a href=\"%s\" download>%s</a><br/>";;
+	$gIntCsvConvertMore			=	$gIntMergeConvertMore;
 }
 // add other languages here
 

@@ -11,6 +11,8 @@ $gSiteLogo			=	"images/companylogo.png";
 $gCustomHeaderLines	=	"";
 $gFolderUploadName  =	"uploads";
 $gSiteLanguage		=	"de"; 
+$gCsvDelimiterField	=	"\t";
+$gCsvDelimiterLine	=	"\n";
 
 
 
