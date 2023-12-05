@@ -33,8 +33,8 @@ echo("
 /* Kuck mal, welche Files hier für diese Session liegen */
 $gUploadFolder = "$gFolderUploadName/$gSessionID";
 say("gUploadFolder: $gUploadFolder", __FILE__, __FUNCTION__, __LINE__, 2);
-$gFileOutName="$gSessionID.csv";
-$gFileOutPath="$gUploadFolder/$gFileOutName";
+//$gFileOutName="$gSessionID.csv";
+//$gFileOutPath="$gUploadFolder/$gFileOutName";
 if (file_exists($gUploadFolder))
 {
 	$gFilesInArray=scandir($gUploadFolder);
@@ -101,8 +101,10 @@ if (file_exists($gUploadFolder))
 	{
 //		$lFileName=array_pop($gFilesInArray);
 		$lFileName		=	$gFilesInArray[0];
+		$lFileOutName	=	"$lFileName.csv";
 		$lFileName 		= 	"$gUploadFolder/$lFileName";
 		$lFileNameTmp 	= 	"$lFileName.tsv.tmp";
+		$lFileOutPath	=	"$gUploadFolder/$lFileOutName";
 //		$lFileName 		= 	str_replace(' ', '\ ', $lFileName); //escape spaces for command line
 //		$lFileNameTmp 	= 	str_replace(' ', '\ ', $lFileNameTmp); //escape spaces for command line
 		
@@ -111,7 +113,7 @@ if (file_exists($gUploadFolder))
 		say("lCmd: $lCmd", __FILE__, __FUNCTION__, __LINE__, 2);
 		shell_exec($lCmd);
 
-		pdf2csv($lFileNameTmp, $gFileOutPath);
+		pdf2csv($lFileNameTmp, $lFileOutPath);
 	} // if not failed
 
 	/* Lösche die Infiles */
@@ -127,7 +129,7 @@ if (file_exists($gUploadFolder))
 
 	if (!$gFailed)
 	{
-		printf($gIntCsvDownloadHere, $gFileOutPath, $gFileOutName);
+		printf($gIntCsvDownloadHere, $lFileOutPath, $lFileOutName);
 	}
 } // if upload-session-folder-exists
 else
