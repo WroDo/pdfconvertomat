@@ -1,6 +1,10 @@
 # About
 This simple webpage can be used in your intranet for converting PDF files without relying on external sites or paid software.
 
+It provides two services:
+* merging PDFs
+* converting PDF to CSV (experimental, is very dependant on how the PDF was built)
+  
 # ToDos
 - As usual: refactor!
 
@@ -11,7 +15,7 @@ This simple webpage can be used in your intranet for converting PDF files withou
 - Upload a company logo
 
 # Usage
-TBD TBD
+Just upload one or more files and hit the merge/convert button.
 
 
 
