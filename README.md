@@ -3,7 +3,7 @@ This simple webpage can be used in your intranet for converting PDF files withou
 
 It provides two services:
 * merging PDFs
-* converting PDF to CSV (experimental, is very dependant on how the PDF was built)
+* converting PDF to CSV (experimental, quality depends on how the PDF was built)
   
 # ToDos
 - As usual: refactor!
