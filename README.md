@@ -17,7 +17,12 @@ It provides two services:
 # Usage
 Just upload one or more files and hit the merge/convert button.
 
-
+# Known Issues
+Upload does not seem to work and apache (or nginx) states something like this:
+```
+[Thu Jan 25 16:05:59.507128 2024] [php:warn] [pid 30525] [client ::1:59876] PHP Warning:  POST Content-Length of 8956624 bytes exceeds the limit of 8388608 bytes in Unknown on line 0, referer: http://localhost/pdfconvertomat/index.php
+```
+-> set ```post_max_size``` and ```upload_max_filesize``` higher (php.ini).
 
 
 #EOF

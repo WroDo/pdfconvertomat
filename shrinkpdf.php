@@ -12,9 +12,9 @@ session_start(); /* https://www.php.net/manual/en/function.session-start.php */
 //setlocale (LC_ALL, $gLocaleWeb); # Also see: locale -a
 
 /* Defaults */
-$errArray           =   array();
-$gSessionID			=	session_id();
-$gFailed			=	false;
+$errArray  	=   array();
+$gSessionID	=	session_id();
+$gFailed	=	false;
 
 /* Some Debugging */
 say("gSessionID: $gSessionID", __FILE__, __FUNCTION__, __LINE__, 2);
@@ -33,8 +33,8 @@ echo("
 /* Kuck mal, welche Files hier für diese Session liegen */
 $gUploadFolder = "$gFolderUploadName/$gSessionID";
 say("gUploadFolder: $gUploadFolder", __FILE__, __FUNCTION__, __LINE__, 2);
-$gFileOutName="$gSessionID.pdf";
-$gFileOutPath="$gUploadFolder/$gFileOutName";
+//$gFileOutName="$gSessionID.pdf";
+//$gFileOutPath="$gUploadFolder/$gFileOutName";
 if (file_exists($gUploadFolder))
 {
 	$gFilesInArray=scandir($gUploadFolder);
@@ -61,7 +61,7 @@ if (file_exists($gUploadFolder))
 	$gFilesInArrayCount=count($gFilesInArray);
 	if ($gFilesInArrayCount<1)
 	{
-		echo("<font color=\"red\">$gIntMergeNotEnoughFiles</font><br/>");
+		echo("<font color=\"red\">$gIntShrinkNotEnoughFiles</font><br/>");
 		$gFailed=true;
 	}
 
@@ -97,15 +97,20 @@ if (file_exists($gUploadFolder))
 		foreach ($gFilesInArray as $lFileNum => &$lFileName)
 		{
 			$lFileName = str_replace(' ', '\ ', $lFileName); //escape spaces for command line
+			$lFileNameOut=basename($lFileName, ".pdf") . "_shrunken.pdf";
 			$lFileName = "$gUploadFolder/$lFileName";
-		}
+			$lFilePathOut="$gUploadFolder/$lFileNameOut";
+			
+			$lCmd="gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r$gShrinkResolution -sOutputFile=$lFilePathOut $lFileName";
+			
+			say("lCmd: $lCmd", __FILE__, __FUNCTION__, __LINE__, 2);
+			shell_exec($lCmd);
 
-HIER GEHTS WEITER MIT GHOSTSCRIPT!
+			printf($gIntShrinkDownloadHere, $lFilePathOut, $lFileNameOut);
+	
+		} // foreach file
 
-#		$gFilesInString=implode(" ", $gFilesInArray);
-#		$lCmd="pdfunite $gFilesInString  \"$gFileOutPath\"";
-#		say("lCmd: $lCmd", __FILE__, __FUNCTION__, __LINE__, 2);
-#		shell_exec($lCmd);
+    
 	} // if not failed
 
 	/* Lösche die Infiles */
@@ -120,10 +125,10 @@ HIER GEHTS WEITER MIT GHOSTSCRIPT!
 		}
 	}
 
-	if (!$gFailed)
-	{
-		printf($gIntMergeDownloadHere, $gFileOutPath, $gFileOutName);
-	}
+//	if (!$gFailed)
+//	{
+//		printf($gIntShrinkDownloadHere, $gFileOutPath, $gFileOutName);
+//	}
 } // if upload-session-folder-exists
 else
 {

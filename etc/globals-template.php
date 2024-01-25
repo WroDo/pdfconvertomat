@@ -13,6 +13,7 @@ $gFolderUploadName  =	"uploads";
 $gSiteLanguage		=	"de"; 
 $gCsvDelimiterField	=	"\t";
 $gCsvDelimiterLine	=	"\n";
+$gShrinkResolution	= 	100;
 
 
 
