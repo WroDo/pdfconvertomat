@@ -14,7 +14,7 @@ if ($gSiteLanguage=="de")
 	/* index.php Buttons */
 	$gIntButtonMergeLabel		=	"Klicke hier<br/>um die<br/>Dateien zusammenzuf&uuml;gen";
 	$gIntButtonCsvLabel			=	"Klicke hier<br/>um in ein CSV zu wandeln<br/>(beta)";
-	$gIntButtonShrinkLabel		= 	"Klicke hier<br/>um die PDFs zu verkleinern.";
+	$gIntButtonShrinkLabel		= 	"Klicke hier<br/>um die PDFs zu verkleinern.<br/>(beta)";
 	$gIntButtonCleanupLabel		=	"Klicke hier<br/>um<br/>den Vorgang abzubrechen";
 	/* mergepdf Strings */
 	$gIntMergeConvertMore		=	"<br/>Wenn Du noch mehr Dateien konvertieren möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
@@ -36,14 +36,14 @@ if ($gSiteLanguage=="de")
 	$gIntCsvDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\" download>%s</a><br/>";
 	$gIntCsvConvertMore			=	$gIntMergeConvertMore;
 	/* PDF Schrumpfen */
-	$gIntShinkConvertMore		=	"<br/>Wenn Du noch mehr Dateien schrumpfen möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
-	$gIntShinkNotEnoughFiles	=	"Du hast keine Datei ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
-	$gIntShinkNoPDF				=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
-	$gIntShinkOK				=	"Okidoki";
-	$gIntShinkNoFiles			=	"Es wurden keine Dateien hochgeladen. Nichtmal der session-upload-Ordner existiert. (Error -23)";
-	$gIntShinkCheckingFiles		=	"&Uuml;berpr&uuml;fe %d Dateien…<br/>";
-	$gIntShinkCheckingFile		=	"&Uuml;berpr&uuml;fe \"%s\"…";
-	$gIntShinkDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\">%s</a><br/>";
+	$gIntShrinkConvertMore		=	"<br/>Wenn Du noch mehr Dateien schrumpfen möchtest, klicke <a href=\"./index.php\">hier</a>.<br/>";
+	$gIntShrinkNotEnoughFiles	=	"Du hast keine Datei ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
+	$gIntShrinkNoPDF				=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
+	$gIntShrinkOK				=	"Okidoki";
+	$gIntShrinkNoFiles			=	"Es wurden keine Dateien hochgeladen. Nichtmal der session-upload-Ordner existiert. (Error -23)";
+	$gIntShrinkCheckingFiles		=	"&Uuml;berpr&uuml;fe %d Dateien…<br/>";
+	$gIntShrinkCheckingFile		=	"&Uuml;berpr&uuml;fe \"%s\"…";
+	$gIntShrinkDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\">%s</a><br/>";
 }
 elseif ($gSiteLanguage=="en")
 { 
@@ -60,7 +60,7 @@ elseif ($gSiteLanguage=="en")
 	/* index.php Buttons */
 	$gIntButtonMergeLabel		=	"Click here<br/>to merge files";
 	$gIntButtonCsvLabel			=	"Click here<br/>to convert to CSV<br/>(beta)";
-	$gIntButtonShrinkLabel		= 	"Click here<br/>to reduce filesize.)";
+	$gIntButtonShrinkLabel		= 	"Click here<br/>to reduce filesize.<br/>(beta)";
 	$gIntButtonCleanupLabel		=	"Click here<br/>to cancel";
 	/* mergepdf Strings */
 	$gIntMergeConvertMore		=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>";
@@ -82,14 +82,14 @@ elseif ($gSiteLanguage=="en")
 	$gIntCsvDownloadHere		=	"Download the CSV-file: <a href=\"%s\" download>%s</a><br/>";;
 	$gIntCsvConvertMore			=	$gIntMergeConvertMore;
 	/* PDF Schrumpfen */
-	$gIntShinkConvertMore		=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>";
-	$gIntShinkNotEnoughFiles	=	"Du hast keine Datei ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
-	$gIntShinkNoPDF				=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
-	$gIntShinkOK				=	"Okidoki";
+	$gIntShrinkConvertMore		=	"<br/>To convert more, click <a href=\"./index.php\">here</a>.<br/>";
+	$gIntShrinkNotEnoughFiles	=	"Du hast keine Datei ausgew&auml;hlt. Versuchs nochmal! (Error -5)";
+	$gIntShrinkNoPDF				=	"Dies ist kein PDF und kann nicht verarbeitet werden. (Error -42)";
+	$gIntShrinkOK				=	"Okidoki";
 	$gIntShinkNoFiles			=	"Es wurden keine Dateien hochgeladen. Nichtmal der session-upload-Ordner existiert. (Error -23)";
-	$gIntShinkCheckingFiles		=	"&Uuml;berpr&uuml;fe %d Dateien…<br/>";
+	$gIntShrinkCheckingFiles		=	"&Uuml;berpr&uuml;fe %d Dateien…<br/>";
 	$gIntShinkCheckingFile		=	"&Uuml;berpr&uuml;fe \"%s\"…";
-	$gIntShinkDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\">%s</a><br/>";
+	$gIntShrinkDownloadHere		=	"Hier kannst Du das Ergebnis herunterladen: <a href=\"%s\">%s</a><br/>";
 }
 // add other languages here
 
