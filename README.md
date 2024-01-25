@@ -9,7 +9,7 @@ It provides two services:
 - As usual: refactor!
 
 # Installing
-- Use a LAMP with Poppler-Tools.
+- Use a LAMP with Poppler-Tools and ghostscript.
 - Create log and uploads folders, make them writable for your webserver.
 - Create your own etc/globals.php from the template
 - Upload a company logo
